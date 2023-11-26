@@ -1,0 +1,86 @@
+Lógica y Descripción del Código
+
+1. Clase Main (Main):
+
+Menú Principal:
+Se utiliza un bucle while (true) para mantener el menú en ejecución hasta que el usuario elija salir.
+La entrada del usuario se valida con un Scanner para asegurar que sea un número entero.
+
+Registro de Usuario:
+Se solicita al usuario un nombre de usuario y una contraseña.
+La lógica verifica que ambos campos no estén vacíos y tienen una longitud adecuada.
+Se utiliza la instancia de Biblioteca para registrar al nuevo usuario.
+
+Inicio de Sesión:
+El usuario ingresa su nombre de usuario y contraseña.
+Se itera sobre la lista de usuarios en la instancia de Biblioteca para verificar la existencia de un usuario con las credenciales proporcionadas.
+Si la autenticación es exitosa, se muestra un mensaje de bienvenida y se accede al menú del usuario.
+
+Bucle Principal:
+Permite al usuario realizar operaciones hasta que elija salir.
+Las opciones seleccionadas por el usuario determinan las acciones a realizar mediante un bloque switch.
+
+
+
+2. Clase Usuario (Usuario):
+
+Atributos:
+nombre: Almacena el nombre de usuario.
+contraseña: Almacena la contraseña del usuario.
+
+Métodos:
+getNombre(): Devuelve el nombre del usuario.
+getContraseña(): Devuelve la contraseña del usuario.
+
+
+
+3. Clase Libro (Libro):
+
+Atributos:
+titulo, autor, genero: Almacenan información sobre el libro.
+disponible: Indica si el libro está disponible para ser alquilado.
+
+Métodos:
+alquilar(): Cambia el estado del libro a no disponible si está disponible.
+devolver(): Cambia el estado del libro a disponible si no está disponible.
+
+
+
+4. Clase Biblioteca (Biblioteca):
+
+Atributos:
+listaLibros: Almacena la lista de libros en la biblioteca.
+listaUsuarios: Almacena la lista de usuarios registrados.
+usuarioActual: Almacena el usuario que ha iniciado sesión.
+
+Métodos:
+
+Inicialización:
+inicializarLibrosIniciales(): Agrega libros iniciales al iniciar la aplicación.
+
+Operaciones sobre Libros:
+agregarLibroSilencioso(Libro libro): Agrega libros a la biblioteca sin imprimir mensajes.
+agregarLibro(Libro libro): Agrega un libro a la biblioteca e imprime un mensaje.
+eliminarLibro(Libro libro): Elimina un libro de la biblioteca e imprime un mensaje si tiene éxito.
+alquilarLibro(Libro libro): Llama al método alquilar del libro correspondiente.
+devolverLibro(Libro libro): Llama al método devolver del libro correspondiente.
+
+Operaciones sobre Usuarios:
+registrarUsuario(String nombre, String contraseña): Registra un nuevo usuario e imprime un mensaje.
+iniciarSesion(String nombre, String contraseña): Inicia sesión para un usuario existente e imprime mensajes.
+
+Menú del Usuario:
+menuUsuario(): Presenta un menú de opciones para el usuario y ejecuta la funcionalidad seleccionada.
+
+Operaciones de Usuario:
+agregarLibro(): Lógica para agregar un nuevo libro solicitando detalles al usuario.
+eliminarLibro(): Lógica para eliminar un libro solicitando el título al usuario.
+alquilarLibro(): Lógica para alquilar un libro solicitando el título al usuario.
+devolverLibro(): Lógica para devolver un libro solicitando el título al usuario.
+buscarLibro(): Lógica para buscar un libro solicitando el parámetro y el valor al usuario.
+
+Mostrar Información:
+mostrarCatalogo(): Muestra el catálogo completo de libros con detalles.
+
+Cierre de Sesión:
+Al seleccionar "Cerrar Sesión" en el menú del usuario, se imprime un mensaje y se sale del bucle while del menú del usuario, devolviendo el control al bucle principal.

@@ -10,17 +10,11 @@ public class Biblioteca {
     public Biblioteca() {
         this.listaLibros = new ArrayList<>();
         this.listaUsuarios = new ArrayList<>();
-        
-        
-        
         inicializarLibrosIniciales();
     }
     
-    
-    
-    
     private void inicializarLibrosIniciales() {
-        // Agrega algunos libros al inicio sin imprimir mensajes
+        // Agrego algunos libros al inicio sin imprimir mensajes
         agregarLibroSilencioso(new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", "Novela"));
         agregarLibroSilencioso(new Libro("Matar a un ruiseñor", "Harper Lee", "Ficción"));
         agregarLibroSilencioso(new Libro("Crimen y castigo", "Fyodor Dostoevsky", "Novela"));
@@ -28,16 +22,12 @@ public class Biblioteca {
         agregarLibroSilencioso(new Libro("1984", "George Orwell", "Ciencia Ficción"));
         agregarLibroSilencioso(new Libro("El Gran Gatsby", "F. Scott Fitzgerald", "Ficción"));
         agregarLibroSilencioso(new Libro("Mujer en punto cero", "Nawal El Saadawi", "Ficción"));
-
-        // Agrega más libros si es necesario
     }
 
     private void agregarLibroSilencioso(Libro libro) {
         listaLibros.add(libro);
         // No imprime mensajes al agregar libros inicialmente
     }
-    
-    
     
     public void agregarLibro(Libro libro) {
         listaLibros.add(libro);

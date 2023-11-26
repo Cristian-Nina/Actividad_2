@@ -1,0 +1,38 @@
+Informe del Problema:
+
+Optimizando la Inicialización de Libros:
+
+Durante el desarrollo de la aplicación, me enfrenté a un desafío relacionado con la manipulación de la lista de libros en la clase Biblioteca. Originalmente, al agregar libros iniciales en el método inicializarLibrosIniciales, me di cuenta de que no quería imprimir mensajes cada vez que se agregaba un libro durante esta inicialización, ya que quería mantener la simplicidad y evitar redundancias en la salida del programa.
+
+La solución fue crear un método adicional llamado agregarLibroSilencioso que permitiera agregar libros a la lista sin imprimir mensajes. Esta solución me permitió mantener la funcionalidad de agregar libros en otros contextos, como cuando un usuario decide agregar un libro a la biblioteca desde el menú de usuario, y al mismo tiempo, evitar la salida innecesaria de mensajes durante la inicialización.
+
+
+Aquí está la parte del código correspondiente a la solución:
+
+// En la clase Biblioteca
+private void agregarLibroSilencioso(Libro libro) {
+    listaLibros.add(libro);
+    // No imprime mensajes al agregar libros inicialmente
+}
+
+private void inicializarLibrosIniciales() {
+    // Agrego algunos libros al inicio sin imprimir mensajes
+    agregarLibroSilencioso(new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", "Novela"));
+    agregarLibroSilencioso(new Libro("Matar a un ruiseñor", "Harper Lee", "Ficción"));
+    agregarLibroSilencioso(new Libro("Crimen y castigo", "Fyodor Dostoevsky", "Novela"));
+    agregarLibroSilencioso(new Libro("Orgullo y prejuicio", "Jane Austen", "Novela"));
+    agregarLibroSilencioso(new Libro("1984", "George Orwell", "Ciencia Ficción"));
+    agregarLibroSilencioso(new Libro("El Gran Gatsby", "F. Scott Fitzgerald", "Ficción"));
+    agregarLibroSilencioso(new Libro("Mujer en punto cero", "Nawal El Saadawi", "Ficción"));
+}
+
+public void agregarLibro(Libro libro) {
+    listaLibros.add(libro);
+    System.out.println("\nLibro agregado a la biblioteca: " + libro.getTitulo());
+}
+
+// Otros métodos relacionados con la manipulación de libros...
+
+
+
+Esta solución permitió mantener la coherencia en la gestión de libros y mejoró la legibilidad del código al evitar mensajes innecesarios en la salida durante la inicialización.
